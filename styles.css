@@ -1,0 +1,38 @@
+body {
+    background-color: #FBFBFB;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+h1 {
+    color: #301C1C;
+
+}
+h2 {
+	color: #716969;
+}
+h3 {
+	color:#BCABAE;
+}
+p {
+    color: #2D2E2E;
+}
+.topnav a {
+    float: left;
+    color: #7F7979;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.topnav a:hover {
+    background-color: #5F5B6B;
+    color: black;
+}
+
+
+.topnav a.active {
+    background-color: #C1BDB3;
+    color: white;
+    width: 50%;
+}
