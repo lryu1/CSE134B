@@ -7,32 +7,110 @@ h1 {
 
 }
 h2 {
-	color: #716969;
+	color: black;
 }
 h3 {
-	color:#BCABAE;
+	color:black;
 }
 p {
     color: #2D2E2E;
-}
-.topnav a {
-    float: left;
-    color: #7F7979;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
 }
 
+div.Filter {
+           
+        display:block;
+            position:absolute;
+            top:8%;
+           
+            height: 85%;
+         width:16%;
+         border-radius: 20px;
+         border-style:double;
+      
+           background-color:#EBEBEB;
+           padding:20px;
+           font-style:italic;
+           font-weight:bold;
+        
+        
 
-.topnav a:hover {
-    background-color: #5F5B6B;
-    color: black;
+
+	}
+
+ ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+ li {
+	float: left;
+	}
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: burlywood;
+                }
+
+        .active {
+            background-color: gray;
+        }
+
+
+        div.personInfo {
+           
+        
+            position:relative;
+            top:10%;
+            left:25%;
+           
+            height: 80%;
+         width:50%;
+         border-radius: 20px;
+         border-style:double;
+      
+           background-color:#EBEBEB;
+           padding:20px;
+           font-style:italic;
+           font-weight:bold;
+           text-align:center;
+        }
+
+ .logoutLblPos{
+   position:fixed;
+   right:10px;
+   top:5px;
+}
+div.postings {
+            position: absolute;
+            width: 75%;
+            top: 8%;
+            left: 25%;
+        }
+div.post{
+         margin-top:20px;
+         width:85%;
+         border-radius: 20px;
+         padding:10px;
+	background-color:#EBEBEB;
+	
 }
 
-
-.topnav a.active {
-    background-color: #C1BDB3;
-    color: white;
-    width: 50%;
+.filter{
+	margin-top:20px;
+	border-style: solid;
+	background-color: gray;
 }
