@@ -4,72 +4,55 @@
      <link rel="stylesheet" href="styles.css">
 
 		<style>
-		.topnav {
-    background-color: #333;
-    overflow: hidden;
-}
-
-
-.filter{
-	margin-top:20px;
-	border-style: solid;
-	background-color: #C1DBD3;
-}
-
-.post1{
-	border-radius: 25px;
-	border-style: solid;
-	margin: 20px;
-}
-
-.logoutLblPos{
-   position:fixed;
-   right:10px;
-   top:5px;
-}
 
 
 </style>
 </head>
 
 <body>
-	<p>Welcome!</p>
-<div class="topnav">
-  <a class="active" href="#browse">Browse Casting Calls</a>
-  <a href="#portfolio">My Portfolio</a>
-  <a href="#clients">My Clients</a>
-</div>
+
+  <ul>
+        <li><a href="./AgentCastingCalls.html">Browse Casting Calls</a></li>
+        <li><a href="./AgentsClients.html">My Clients</a></li>
+        <li><a href=./AgentPortfolio.html>Portfolio</a></li>
+        <li><a href=./Messages.html>Messages</a></li>
+</ul>
+
 <form align="right" name="form1" method="post" action="log_out.php">
   <label class="logoutLblPos">
   <input name="submit2" type="submit" id="submit2" value="log out">
   </label>
 </form>
 
-<div class="filter">
-	<h2>Filter</h2>
-	<form>
-  		Age:<br>
-  		<input type="text" name="age"><br>
-  		Gender:<br>
-  		 <input type="radio" name="gender" value="male" checked> Male<br>
-  		<input type="radio" name="gender" value="female"> Female<br>
-  		<input type="radio" name="gender" value="other"> Other
-  		Location:<br>
-  		<input type = "text" name="location"><br>
-  		Ethnicity:<br>
-  		<input type = "text" name="ethnicity"><br>
-  		<input type="submit" value="Apply">
-	</form>
-</div>
+<div class="Filter">
+  		<form action="/action_page.php">
+            Filter Postings:<br /><br />
+                location:
+                <input type="text" name="location" /><br><br />
+                Gender:<br/>
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="other"> Other<br><br />
+               
+                Age:
+                <input type="range" name="age" min="18" max="100"><br /> <br />
 
-<div class = "post1">
+                <input type="submit" value="Submit">
+          
+        </form>
+	
+</div>
+<div class="postings">
+<div class = "post">
 	<h1><center>Titanic</center></h1>
 	<h2><center>Feature Film</center></h2>
-	<h3><center>Role: Rose</center></h3>
-	<h3><center>Gender: Female<center></h3>
-	<h3><center>Age: 25-35<center></h3>
-	<h3><center>Location: Santa Monica</center></h3>
-	<h3><center>Ethnicity: Caucasian</center></h3>
+	<p>
+        Role: Rose <br>
+        Gender: Female <br>
+        Age: 20-30 <br>
+        Location: Santa Monica <br>
+        Ethnicity: Caucasian <br>
+  </p>
   <h3>Recommend to</h3>
    <select class = "dropdown">
     <option value="actor1">Actor 1</option>
@@ -79,14 +62,16 @@
   </select>
 </div>
 
-<div class = "post1">
-	<h1><center>Game of Thrones</center></h1>
-	<h2><center>Television series</center></h2>
-	<h3><center>Role: Extra wildling</center></h3>
-	<h3><center>Gender: Male/Female<center></h3>
-	<h3><center>Age: N/A<center></h3>
-	<h3><center>Location: Iceland</center></h3>
-	<h3><center>Ethnicity: Caucasian</center></h3>
+<div class = "post">
+  <h1><center>Game of Thrones</center></h1>
+  <h2><center>Television show</center></h2>
+	<p>
+        Role: Extra Wildling <br>
+        Gender: Male/Female <br>
+        Age: N/A <br>
+        Location: Iceland <br>
+        Ethnicity: Caucasian <br>
+  </p>
     <h3>Recommend to</h3>
   <select class = "dropdown">
     <option value="actor1">Actor 1</option>
@@ -94,6 +79,7 @@
       <option value="actor3">Actor 3</option>
       <option value="actor4">Actor 4</option>
   </select>
+</div>
 </div>
 
 
