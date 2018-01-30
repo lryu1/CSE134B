@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul {
+            display:flex;
+           justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:#EBEBEB;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: black;
+                text-align: center;
+                font-weight:bold;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color:burlywood;
+                }
+
+        .active {
+            background-color:gray;
+        }
+
+        div.Filter {
+           
+        display:block;
+            position:absolute;
+            top:8%;
+           
+            height: 85%;
+         width:16%;
+         border-radius: 20px;
+         border-style:double;
+      
+           background-color:#EBEBEB;
+           padding:20px;
+           font-style:italic;
+           font-weight:bold;
+        
+        
+
+
+        }
+        div.postings {
+            position: absolute;
+            top: 8%;
+            left: 25%;
+            width:75%;
+        }
+     div.post1{
+           
+     
+          
+  
+         
+         width:85%;
+         border-radius: 20px;
+         padding:10px;
+       
+           background-color:#EBEBEB;
+           font-style:italic;
+           
+        
+	
+}
+        div.post2{
+       
+        
+  
+         margin-top:20px;
+         width:85%;
+         border-radius: 20px;
+         padding:10px;
+       
+           background-color:#EBEBEB;
+           
+           
+        
+	
+}
+
+        div.post3{
+       
+        
+
+         margin-top:20px;
+         width:85%;
+         border-radius: 20px;
+         padding:10px;
+       
+           background-color:#EBEBEB;
+           
+           
+        
+	
+}
+         div.post4{
+       
+        
+
+         margin-top:20px;
+         width:85%;
+         border-radius: 20px;
+         padding:10px;
+       
+           background-color:#EBEBEB;
+           
+           
+        
+	
+}
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <ul>
+        <li><a href="newRecruiterHome.html">Browse Actors</a></li>
+        <li><a href="#newRecruiterPostings.html">My Postings</a></li>
+        <!--<li><a href=./actorPortfolio.html>Portfolio</a></li>-->
+    </ul>
+
+    <div class="Filter">
+        <form action="/action_page.php">
+            Filter Postings:<br /><br />
+                location:
+                <input type="text" name="location" /><br><br />
+                Gender:<br/>
+                <input type="radio" name="gender" value="male" checked> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="other"> Other<br><br />
+               
+                Age:
+                <input type="range" name="age" min="18" max="100"><br /> <br />
+
+                <input type="submit" value="Submit">
+          
+        </form>
+    </div>
+    <div class="postings">
+       
+    <div class="post1">
+        <h1 style = "font-family:cursive; ">Post 1</h1>
+	<h2>Looking for Male to play lead role</h2>
+	<h3>Interested Actors</h3>
+	<select class = "dropdown">
+ 		<option value="actor1">Actor 1</option>
+  		<option value="actor2">Actor 2</option>
+  		<option value="actor3">Actor 3</option>
+  		<option value="actor4">Actor 4</option>
+	</select>
+	<p class="Status" align="right">OPEN</h3>
+    </div>
+
+    <div class="post2">
+       <h1 style = "font-family:cursive; ">Post 2</h1>
+	<h2>Looking for Male to play lead role</h2>
+	<h3>Interested Actors</h3>
+	<select class = "dropdown">
+ 		<option value="actor1">Actor 1</option>
+  		<option value="actor2">Actor 2</option>
+  		<option value="actor3">Actor 3</option>
+  		<option value="actor4">Actor 4</option>
+	</select>
+	<p class="Status" align="right">OPEN</h3>
+    </div>
+        <div class="post3">
+           <h1 style = "font-family:cursive; ">Post 3</h1>
+	<h2>Looking for Male to play lead role</h2>
+	<h3>Interested Actors</h3>
+	<select class = "dropdown">
+ 		<option value="actor1">Actor 1</option>
+  		<option value="actor2">Actor 2</option>
+  		<option value="actor3">Actor 3</option>
+  		<option value="actor4">Actor 4</option>
+	</select>
+	<p class="Status" align="right">CLOSED</h3>
+        </div>
+        <div class="post4">
+    <h1 style = "font-family:cursive; ">Post 4</h1>
+	<h2>Looking for Male to play lead role</h2>
+	<h3>Interested Actors</h3>
+	<select class = "dropdown">
+ 		<option value="actor1">Actor 1</option>
+  		<option value="actor2">Actor 2</option>
+  		<option value="actor3">Actor 3</option>
+  		<option value="actor4">Actor 4</option>
+	</select>
+	<p class="Status" align="right">CLOSED</h3>
+        </div>
+    </div>
+</body>
+</html>
