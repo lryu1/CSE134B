@@ -1,130 +1,77 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        ul {
-            display:flex;
-           justify-content: space-around;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color:#EBEBEB;
-        }
-
-        li {
-            float: left;
-        }
-
-            li a {
-                display: block;
-                color: black;
-                text-align: center;
-                font-weight:bold;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-                li a:hover:not(.active) {
-                    background-color:burlywood;
-                }
-
-        .active {
-            background-color:gray;
-        }
-
-        div.Filter {
-           
-        display:block;
-            position:absolute;
-            top:8%;
-           
-            height: 85%;
-         width:16%;
-         border-radius: 20px;
-         border-style:double;
-      
-           background-color:#EBEBEB;
-           padding:20px;
-           font-style:italic;
-           font-weight:bold;
         
-        
+    div.post1{
 
 
-        }
-        div.postings {
-            position: absolute;
-            top: 8%;
-            left: 25%;
-        }
-     div.post1{
-           
-     
-          
-  
-         
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           font-style:italic;
-           
-        
-	
-}
-        div.post2{
-       
-        
-  
-         margin-top:20px;
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           
-           
-        
-	
-}
 
-        div.post3{
-       
-        
 
-         margin-top:20px;
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           
-           
-        
-	
-}
-         div.post4{
-       
-        
 
-         margin-top:20px;
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           
-           
-        
-	
-}
+    width:85%;
+    border-radius: 20px;
+    padding:10px;
 
+    background-color:#EBEBEB;
+    font-style:italic;
+
+
+
+    }
+    div.post2{
+
+
+
+    margin-top:20px;
+    width:85%;
+    border-radius: 20px;
+    padding:10px;
+
+    background-color:#EBEBEB;
+
+
+
+
+    }
+
+    div.post3{
+
+
+
+    margin-top:20px;
+    width:85%;
+    border-radius: 20px;
+    padding:10px;
+
+    background-color:#EBEBEB;
+
+
+
+
+    }
+    div.post4{
+
+
+
+    margin-top:20px;
+    width:85%;
+    border-radius: 20px;
+    padding:10px;
+
+    background-color:#EBEBEB;
+
+
+
+
+    }
     </style>
+       
 </head>
 <body>
 
+<<<<<<< HEAD
     <ul>
         <li><a href="#actorHomePage">Casting Calls</a></li>
         <li><a href="#findAgent">Find Agent</a></li>
@@ -135,53 +82,71 @@
     <div class="Filter">
         <form action="/action_page.php">
             Filter Postings:<br /><br />
+=======
+        <ul>
+            
+            <li><a href="#actorHomePage">Casting Calls</a></li>
+            <li><a href="actorFindAgent.html">Find Agent</a></li>
+            <li><a href="actorPortfolio.html">Portfolio</a></li>
+        </ul>
+    <form align="right" name="form1" method="post" action="log_out.php">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
+        <div class="Filter">
+            <form action="/action_page.php">
+                Filter Postings:<br /><br />
+>>>>>>> e5c1fb06e92caee6c1359956548e1ae10097e4db
                 location:
                 <input type="text" name="location" /><br><br />
-                Gender:<br/>
+                Gender:<br />
                 <input type="radio" name="gender" value="male" checked> Male<br>
                 <input type="radio" name="gender" value="female"> Female<br>
                 <input type="radio" name="gender" value="other"> Other<br><br />
-               
+
                 Age:
                 <input type="range" name="age" min="18" max="100"><br /> <br />
 
                 <input type="submit" value="Submit">
-          
-        </form>
-    </div>
-    <div class="postings">
-       
-    <div class="post1">
-        <h2> Posting 1: </h2>
-       <p> Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
 
-Location: 96 Ursula Place, Stamford, CT 06902 </p>
-    </div>
-
-    <div class="post2">
-        <h2> Posting 2: </h2>
-        <p>
-            Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
-
-            Location: 96 Ursula Place, Stamford, CT 06902
-        </p>
-    </div>
-        <div class="post3">
-            <h2> Posting 3: </h2>
-            <p>
-                Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
-
-                Location: 96 Ursula Place, Stamford, CT 06902
-            </p>
+            </form>
         </div>
-        <div class="post4">
-            <h2> Posting 4: </h2>
-            <p>
-                Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
+        <div class="postings">
 
-                Location: 96 Ursula Place, Stamford, CT 06902
-            </p>
+            <div class="post1">
+                <h2> Posting 1: </h2>
+                <p>
+                    Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
+
+                    Location: 96 Ursula Place, Stamford, CT 06902
+                </p>
+            </div>
+
+            <div class="post2">
+                <h2> Posting 2: </h2>
+                <p>
+                    Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
+
+                    Location: 96 Ursula Place, Stamford, CT 06902
+                </p>
+            </div>
+            <div class="post3">
+                <h2> Posting 3: </h2>
+                <p>
+                    Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
+
+                    Location: 96 Ursula Place, Stamford, CT 06902
+                </p>
+            </div>
+            <div class="post4">
+                <h2> Posting 4: </h2>
+                <p>
+                    Lycan Film Studios are casting talent of ALL levels is Seeking talent to star in two of their movies both drama and thriller. If you are want your name and face out there, Please email your resume and head shots or come see us in person!!
+
+                    Location: 96 Ursula Place, Stamford, CT 06902
+                </p>
+            </div>
         </div>
-    </div>
 </body>
 </html>
