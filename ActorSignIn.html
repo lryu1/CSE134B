@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+  <title>Agent's Clients</title>
+     <meta charset="utf-8" />
     <style>
         
         div.loginSection
@@ -13,17 +15,7 @@
            font-weight:bold;
            font-size:1.45em;
            color:white;
-          
-           
-           
 
-            
-            
-           
-            
-
-            
-    
         }
         div.logIn{
             
@@ -67,46 +59,28 @@
 
         }
     </style>
-    <title></title>
-	<meta charset="utf-8" />
 </head>
 <body>
 
-
-
-    <div class="loginSection">
-        <p> &nbsp &nbsp Actors Sign In Page </p>
-        
-
+  <div class="loginSection">
+        <p> Actor Sign In Page </p>
             <div class="logIn">
-                <form class="logIn" method="post" action="actorHomePage.html">
-                    <br />
-
-                    <span style="color:white;">
-                        <label for="email">Email</label>
-                        <input type="text" name="email">
-                        <label for="password"> &nbsp &nbsp Password</label>
-                        <input type="password" name="password" />
-                        <label for=""> &nbsp &nbsp</label>
-                        <input type="submit" value="Log In" />
-                    </span>
+                <form class="logIn" method="post" action="./newRecruiterHome.html">
                     <br /><br />
 
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email">
+                    <label for="password">  Password</label>
+                    <input type="password" id="password" name="password" />
+                    <label for="submit"> </label>
+                    <input type="submit" id="submit" value="Log In" />
+                    <br /><br /><br />
+
                 </form>
-                <!---
-                <label for=""> &nbsp &nbsp</label>
-                <span style="display: inline;">
-                    <button onclick="window.location.href='actorHomePage.html'">Log In</button>
-                </span>
-                <br /><br /><br />
-              -->
-
-
-
             </div>
 </div>
 
-    <img class="actingImg" src="./actingImg.jpg" />
+    <img class="actingImg" src="./actingImg.jpg" alt="actor"/>
 
     <div class="createAccount">
         <form action="/action_page.php">
@@ -124,8 +98,8 @@
                 <input type="password" name="password" />
 
             <br /><br />
-                Birthday:<br />
-                <input type="date" name="bday"><br /><br />
+                Gender:<br />
+               
                 <input type="radio" name="gender" value="male" checked> Male<br>
                 <input type="radio" name="gender" value="female"> Female<br><br />
 
