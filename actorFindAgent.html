@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div.currentAgent {
+            width: 80%;
+            height:35%;
+         border-radius: 20px;
+      
+           background-color:#EBEBEB;
+           padding:20px;
+           font-style:italic;
+           font-weight:bold;
+           text-align:center;
+        }
+
+        div.agent1 {
+            width: 80%;
+            height:35%;
+         border-radius: 20px;
+      padding:20px;
+           background-color:#EBEBEB;
+           margin-top:5%;
+           font-style:italic;
+           font-weight:bold;
+           text-align:center;
+        }
+        img.currentAgentImg{
+            border-style:solid;
+            border-radius:8%;
+            margin-left:auto;
+            margin-right:auto;
+            width:100px;
+            height:auto;
+        }
+        img.agent1Img{
+            border-style:solid;
+            border-radius:8%;
+            margin-left:auto;
+            margin-right:auto;
+            width:100px;
+            height:auto;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <ul>
+
+        <li><a href="actorHomePage.html">Casting Calls</a></li>
+        <li><a href="findAgent">Find Agent</a></li>
+        <li><a href="actorPortfolio.html">Portfolio</a></li>
+    </ul>
+    <form align="right" name="form1" method="post" action="log_out.php">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
+    <div class="Filter">
+        <form action="/action_page.php">
+            Filter Agents:<br /><br />
+            location:
+            <input type="text" name="location" /><br><br />
+            Agency:
+            <input type="text" name="GENCY" /><br><br />
+            Gender:<br />
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> Other<br><br />
+
+            Age:
+            <input type="range" name="age" min="18" max="100"><br /> <br />
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+    <div class="postings">
+
+        <div class="currentAgent">
+            <img class="currentAgentImg" src="isaac-chu-pic.jpg" />
+
+            <br />
+            Current Agent:<br /><br />
+            &nbspName:
+            <input type="text" name="name" value="Isaac Chu" /><br><br />
+            &nbsp&nbspAge:
+            <input type="text" name="age" value="40" /><br><br />
+            Gender:
+            <input type="text" name="gender" value="Male" /><br><br />
+            Talent Agency:
+            <input type="text" name="Agency" value="CSE134B Talent" /><br><br />
+        </div>
+
+        <div class="agent1">
+            <img class="agent1Img" src="isaac-chu-pic.jpg" />
+
+            <br />
+            Agent 1:<br /><br />
+            &nbspName:
+            <input type="text" name="name" value="Andrew Lee" /><br><br />
+            &nbsp&nbspAge:
+            <input type="text" name="age" value="35" /><br><br />
+            Gender:
+            <input type="text" name="gender" value="Male" /><br><br />
+            Talent Agency:
+            <input type="text" name="Agency" value="CSE134B Talent" /><br><br />
+            
+        </div>
+
+    </div>
+</body>
+</html>
