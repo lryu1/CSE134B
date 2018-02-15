@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+
+         ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+ li {
+	float: left;
+	}
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: burlywood;
+                }
+
+        .active {
+            background-color: gray;
+        }
+
+        #postings {
+            position: absolute;
+            width: 75%;
+            top: 8%;
+            left: 25%;
+            
+        }
+        
+    div.post{
+
+
+
+
+
+            margin-top:20px;
+    width:85%;
+    border-radius: 20px;
+    padding:10px;
+
+    background-color:#EBEBEB;
+    font-style:italic;
+    word-wrap:break-word;
+    text-align:left;
+
+
+
+    }
+
+    div.Filter {
+           
+        display:block;
+            position:absolute;
+            top:8%;
+           
+            height: 85%;
+         width:16%;
+         border-radius: 20px;
+         border-style:double;
+      
+           background-color:#EBEBEB;
+           padding:20px;
+           font-style:italic;
+           font-weight:bold;
+        
+        
+
+
+	}
+
+    .logoutLblPos{
+   position:fixed;
+   right:10px;
+   top:5px;
+}
+   
+    
+    </style>
+       
+</head>
+<body>
+
+    <ul>
+
+        <li><a href="#actorHomePage">Casting Calls</a></li>
+        <li><a href="actorFindAgent.html">Find Agent</a></li>
+        <li><a href="actorPortfolio.html">Portfolio</a></li>
+        <li><a href=./Messages.html>Messages</a></li>
+    </ul>
+    <form align="right" name="form1" method="post" action="log_out.php">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
+    
+    <div id="postings">
+    </div>
+
+
+
+    <div class="Filter">
+        <form action="/action_page.php">
+            Filter Job Postings:<br /><br />
+            Title:
+            <input type="text" id="jobTitle" value="" name="title" /> <br><br />
+            Gender:<br />
+            <input type="radio" id="r1" name="gender" value="Male" checked> Male<br>
+            <input type="radio" id="r2" name="gender" value="Female"> Female<br>
+            <input type="radio" id="r3" name="gender" value="Other"> Other<br><br /><br />
+
+            Age:<br />
+            <input type="radio" id="t20" name="age" value="20" checked> 20s<br>
+            <input type="radio" id="t30" name="age" value="30"> 30s<br>
+            <input type="radio" id="t40" name="age" value="40"> 40s<br><br />
+    
+        </form>
+        
+
+        <br /><br />
+        <button onclick="filterFunction()">Filter</button>
+
+    </div>
+
+    <div id="postings">
+    </div>
+     
+       
+   
+      
+   
+    <script>
+               var postingsArr = JSON.parse(localStorage.getItem("postingsArr"));
+               var postingsDiv = document.getElementById("postings");
+        
+              for (i = 0; i < postingsArr.length; i++) {
+            
+
+                      var jobDiv = document.createElement("div");
+                     jobDiv.className = "post";
+
+                     
+
+                      var titleH = document.createElement("H3");
+                      var titleValue = document.createTextNode("Title: " + postingsArr[i].postingTitle);
+                      titleH.appendChild(titleValue);
+                      jobDiv.appendChild(titleH);
+
+
+
+
+                       var genderH = document.createElement("H4");
+                       var genderHValue = document.createTextNode("Gender: " + postingsArr[i].postingGender);
+                      genderH.appendChild(genderHValue);
+                      jobDiv.appendChild(genderH);
+
+
+
+                      var AgeH = document.createElement("H4");
+                      var ageHValue = document.createTextNode("Age: " + postingsArr[i].postingAge);
+                       AgeH.appendChild(ageHValue);
+                       jobDiv.appendChild(AgeH);
+
+
+
+                       var descriptionH = document.createElement("p");
+                      var descriptionHValue = document.createTextNode("Description: " + postingsArr[i].postingDescription);
+                      descriptionH.appendChild(descriptionHValue);
+                      jobDiv.appendChild(descriptionH);
+
+
+                      postingsDiv.appendChild(jobDiv);
+                 }
+
+    
+
+
+   
+              function filterFunction() {
+      
+                  while (postingsDiv.firstChild) {
+                      postingsDiv.removeChild(postingsDiv.firstChild);
+                  }
+
+
+                  for (i = 0; i < postingsArr.length; i++) {
+                      var jobTitleValue = document.getElementById("jobTitle").value;
+
+
+                      if (document.getElementById("r1").checked) {
+                          var genderValue = document.getElementById("r1").value;
+                      }
+                      else if (document.getElementById('r2').checked) {
+                          var genderValue = document.getElementById("r2").value;
+                      }
+                      else {
+                          var genderValue = document.getElementById("r3").value;
+                      }
+                   
+
+                      if (document.getElementById("t20").checked) {
+                          var ageValue = document.getElementById("t20").value;
+                      }
+                      else if (document.getElementById("t30").checked) {
+                          var ageValue = document.getElementById("t30").value;
+                      }
+                      else if (document.getElementById("t40").checked) {
+                          var ageValue = document.getElementById("t40").value;
+                      }
+                  
+                        if (((jobTitleValue == postingsArr[i].postingTitle) || jobTitleValue == "") &&
+                       (genderValue == postingsArr[i].postingGender) &&
+                        ((parseInt(postingsArr[i].postingAge, 10) >= parseInt(ageValue, 10)) && (parseInt(postingsArr[i].postingAge, 10) < (parseInt(ageValue, 10) + 10))))
+                        {
+                      
+
+
+
+
+                          var jobDiv1 = document.createElement("div");                  
+                          jobDiv1.className = "post";              
+
+                          var titleH1 = document.createElement("H3");
+                          var titleValue1 = document.createTextNode("Title: " + postingsArr[i].postingTitle);
+                          titleH1.appendChild(titleValue1);
+                          jobDiv1.appendChild(titleH1);
+
+
+                          var genderH1 = document.createElement("H4");
+                          var genderHValue1 = document.createTextNode("Gender: " + postingsArr[i].postingGender);
+                          genderH1.appendChild(genderHValue1);
+                          jobDiv1.appendChild(genderH1);
+
+
+                          var AgeH1 = document.createElement("H4");
+                          //var ageValue = postingsArr[i++];
+                          var ageHValue1 = document.createTextNode("Age: " + postingsArr[i].postingAge);
+                          AgeH1.appendChild(ageHValue1);
+                          jobDiv1.appendChild(AgeH1);
+
+
+                          var descriptionH1 = document.createElement("p");
+                          var descriptionHValue1 = document.createTextNode("Description: " + postingsArr[i].postingDescription);
+                          descriptionH1.appendChild(descriptionHValue1);
+                          jobDiv1.appendChild(descriptionH1);
+
+
+                          postingsDiv.appendChild(jobDiv1);
+                      }
+                  }
+              }
+
+
+                 
+
+
+
+    </script> 
+        
+</body>
+</html>
