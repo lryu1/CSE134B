@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat - Customer Module</title>
+    
+
+    <style>
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        li {
+	float: left;
+	}
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: burlywood;
+                }
+
+        .active {
+            background-color: gray;
+        }
+
+
+     .chat {
+  border-radius: 5px 5px 0 0;
+  background: #ddd;
+  padding: 5px;
+  
+  position: fixed;
+  bottom: 0;
+  left: 50px;
+  
+  color: #888;
+  width:90%;
+}
+     
+.inputClass {
+    height: 20px;
+    width:90%;
+
+}
+
+button {
+    float: right;
+    display: inline;
+    
+}
+.logoutLblPos{
+   position:fixed;
+   right:10px;
+   top:5px;
+}
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    word-break: break-all;
+     word-wrap: break-word;
+}
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href=./Messages>Messages</a></li>
+    </ul>
+    <form align="right" name="form1" method="post" action="index.html">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
+    <h2>Chat Messages</h2>
+
+
+
+
+    <div class='chat'>
+        <form method="post">
+            Chat :
+            
+            <input class="inputClass" type="text" id="sentMsg" title="Send" />
+            
+          
+        </form>
+        <button onclick="sendFunction()">Send</button>
+       
+
+    </div>
+    <script>
+        function sendFunction() {
+            var msgDiv = document.createElement("div");
+
+            msgDiv.className = "container";
+            var msg = document.getElementById("sentMsg").value;
+            var messageP = document.createElement("p");
+            var textNodeMsg = document.createTextNode(msg);
+            messageP.appendChild(textNodeMsg);
+            msgDiv.appendChild(messageP);
+            document.body.appendChild(msgDiv);
+
+
+        }
+        </script>
+
+</body>
+</html>
