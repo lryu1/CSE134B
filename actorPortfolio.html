@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
-<head> 
-    <title>Actor Portfolio</title>
+<head>
+   
     <link rel="stylesheet" href="styles.css">
     <style>
        
@@ -39,43 +39,70 @@
 
 
          </style>
+
+    
 </head>
 <body>
+    
+    
 
     <ul>
         <li><a href="actorHomePage.html">Casting Calls</a></li>
         <li><a href="actorFindAgent.html">Find Agent</a></li>
         <li><a href="#actorPortfolio">Portfolio</a></li>
-        <li><a href=./Messages.html>Messages</a></li>
     </ul>
 
-    <form name="form1" method="post" action="index.html">
+    <form align="right" name="form1" method="post" action="log_out.php">
         <label class="logoutLblPos">
             <input name="submit2" type="submit" id="submit2" value="log out">
         </label>
     </form>
 
+    
+
     <div class="actorInfo">
-        <img class="actorImage" src="./actorImage.jpg" alt="Alt" />
+        <img class="actorImage" src="./actorImage.jpg" />
         <form action="/action_page.php">
             <br />
             Actor Info:<br /><br />
-            &amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbspName:
-            <input type="text" name="name" value="Tom Lee"/><br><br />
-            &amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbspAge:
-            <input type="text" name="age" value="40" /><br><br />
-            &amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbspGender:
-            <input type="text" name="gender" value="Male" /><br><br />
-            &amp;nbsp&amp;nbsp&amp;nbsp&amp;nbsp&amp;nbspHeight:
-            <input type="text" name="height" value="5′8" /><br><br />
-            Ethinicity:
-            <input type="text" name="ethinicity" value="White" /><br><br />
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbspName:
+            <input  type="text" id="firstName" name="lastName"/><br><br />
+            Last Name:
+            <input type="text" id="lastName" name="lastName" /><br><br />
+
+            Birthday:
+            <input type="text" id="bDay" name="bDay"  /><br><br />
+
+            &nbsp&nbsp&nbsp&nbsp&nbspGender:
+
+            <input type="text" id="gender" name="gender" /><br><br />
+            &nbsp&nbsp&nbsp&nbspEmail:
+            <input type="text" id="email" name="Email" /><br><br />
+            Mobile:
+            <input type="text" id="mobile" name="mobile"  /><br><br />
             Links:
 
 
 
         </form>
-    </div>
+        </div>
+        
+    <script>
+        var actorObj = JSON.parse(localStorage.getItem("actorObj"));
+        document.getElementById("firstName").setAttribute("value", actorObj.actorFirstName);
+        document.getElementById("lastName").setAttribute("value", actorObj.actorLastName);
+        document.getElementById("mobile").setAttribute("value", actorObj.actorMobile);
+
+      //document.getElementById("bDay").setAttribute("value", actorObj.actorBirthDay);
+        document.getElementById("gender").setAttribute("value", actorObj.actorGender);
+        document.getElementById("email").setAttribute("value", actorObj.actorEmail);
+
+        //document.getElementById("age").value = "2014-02-09";;
+       // document.write(actorObj.actorBirthday);
+
+            ///document.getElementById("firstName").value = actorObj.actorFirstName;
+    </script>
+    
 </body>
 </html>
     
