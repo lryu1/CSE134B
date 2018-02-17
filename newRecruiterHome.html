@@ -131,7 +131,7 @@
 
     <ul>
         <li><a href="newRecruiterHome.html">Browse Actors</a></li>
-        <li><a href="newRecruiterPostings.html">My Postings</a></li>
+        <li><a href="./RecruitersPostings.html">My Postings</a></li>
         <li><a href=./Messages.html>Messages</a></li>
     </ul>
     <form name="form1" method="post" action="index.html">
@@ -157,48 +157,48 @@
           
         </form>
     </div>
-    <div class="postings">
-       
-    <div class="post1">
-    	<h2> Posting 1: </h2>
-		<h3 style="text-align:center">Brad Pitt</h3>
-  		<!---<img src="/Users/Anurag/Downloads/1242911076001_5367624651001_et-bradpittmotorcycle-032117-hulu.jpg" style="width:200px;height:200px;position:relative">-->
-		<h3 style="text-align:center">Male</h3>
-		<h3 style="text-align:center">52</h3>
-		<h3 style="text-align:center">Los Angeles</h3>
-		<h3 style="text-align:center">Ethnicity</h3>
+    <div id=actor>
     </div>
+    <script>
+            var actorObj = JSON.parse(localStorage.getItem("actorObj"));
+            var actorPg = document.getElementById("actor");
 
-    <div class="post2">
-        <h2> Posting 2: </h2>
-        <h3 style="text-align:center">Brad Pitt</h3>
-        <!---<img src="/Users/Anurag/Downloads/1242911076001_5367624651001_et-bradpittmotorcycle-032117-hulu.jpg" style="width:200px;height:200px;text-align:center">-->
-        <h3 style="text-align:center">Male</h3>
-        <h3 style="text-align:center">52</h3>
-        <h3 style="text-align:center">Los Angeles</h3>
-        <h3 style="text-align:center">Ethnicity</h3>
-    </div>        
+            var actorDiv = document.createElement("div");
+            actorDiv.className = "post";
 
-    <div class="post3">
-        <h2> Posting 3: </h2>
-        <h3 style="text-align:center">Brad Pitt</h3>
-        <!--<img src="/Users/Anurag/Downloads/1242911076001_5367624651001_et-bradpittmotorcycle-032117-hulu.jpg" style="width:200px;height:200px;" style="text-align:center">-->
-        <h3 style="text-align:center">Male</h3>
-        <h3 style="text-align:center">52</h3>
-        <h3 style="text-align:center">Los Angeles</h3>
-        <h3 style="text-align:center">Ethnicity</h3>
-    </div>  
+             var firstName = document.createElement("H3");
+                      var titleValue = document.createTextNode("First Name: " + actorObj.firstName);
+                      firstName.appendChild(titleValue);
+                      actorDiv.appendChild(firstName);
 
+             var lastName = document.createElement("H4");
+                      var lasNameV = document.createTextNode("Title: " + actorObj.lastName);
+                      lastName.appendChild(lastNameV);
+                      actorDiv.appendChild(lastName);
 
-       <div class="post4">
-        <h2> Posting 4: </h2>
-        <h3 style="text-align:center">Brad Pitt</h3>
-        <!--<img src="/Users/Anurag/Downloads/1242911076001_5367624651001_et-bradpittmotorcycle-032117-hulu.jpg" style="width:200px;height:200px;text-align:center"  >-->
-        <h3 style="text-align:center">Male</h3>
-        <h3 style="text-align:center">52</h3>
-        <h3 style="text-align:center">Los Angeles</h3>
-        <h3 style="text-align:center">Ethnicity</h3>
-    </div>  
-    </div>
+            var gender = document.createElement("H4");
+                      var genderV = document.createTextNode("Title: " + actorObj.gender);
+                      gender.appendChild(genderV);
+                      actorDiv.appendChild(gender);
+
+            var mobile = document.createElement("H4");
+                      var mobileV = document.createTextNode("Title: " + actorObj.mobile);
+                      mobile.appendChild(mobileV);
+                      actorDiv.appendChild(mobile);
+
+            var email = document.createElement("H4");
+                      var emailV = document.createTextNode("Title: " + actorObj.email);
+                      email.appendChild(emailV);
+                      actorDiv.appendChild(email);  
+
+            var birthday = document.createElement("H4");
+                      var birthdayV = document.createTextNode("Title: " + actorObj.birthday);
+                      mobile.appendChild(birthdayV);
+                      actorDiv.appendChild(birthday); 
+
+            actorPg.appendChild(actorDiv)
+
+        </script>
+
 </body>
 </html>

@@ -77,7 +77,8 @@
             Age:
             <input type="range" name="age" min="18" max="100"><br /> <br />
 
-            <input type="submit" value="Submit">
+           
+            <button onclick="filterFunction()">Filter</button>
 
         </form>
     </div>
@@ -115,5 +116,83 @@
         </div>
 
     </div>
+
+    <script>
+        function filterFunction() {
+      
+                  while (postingsDiv.firstChild) {
+                      postingsDiv.removeChild(postingsDiv.firstChild);
+                  }
+
+
+                  for (i = 0; i < postingsArr.length; i++) {
+                      var jobTitleValue = document.getElementById("jobTitle").value;
+
+
+                      if (document.getElementById("r1").checked) {
+                          var genderValue = document.getElementById("r1").value;
+                      }
+                      else if (document.getElementById('r2').checked) {
+                          var genderValue = document.getElementById("r2").value;
+                      }
+                      else {
+                          var genderValue = document.getElementById("r3").value;
+                      }
+                   
+
+                      if (document.getElementById("t20").checked) {
+                          var ageValue = document.getElementById("t20").value;
+                      }
+                      else if (document.getElementById("t30").checked) {
+                          var ageValue = document.getElementById("t30").value;
+                      }
+                      else if (document.getElementById("t40").checked) {
+                          var ageValue = document.getElementById("t40").value;
+                      }
+                  
+                        if (((jobTitleValue == postingsArr[i].postingTitle) || jobTitleValue == "") &&
+                       (genderValue == postingsArr[i].postingGender) &&
+                        ((parseInt(postingsArr[i].postingAge, 10) >= parseInt(ageValue, 10)) && (parseInt(postingsArr[i].postingAge, 10) < (parseInt(ageValue, 10) + 10))))
+                        {
+                      
+
+
+
+
+                          var jobDiv1 = document.createElement("div");                  
+                          jobDiv1.className = "post";              
+
+                          var titleH1 = document.createElement("H3");
+                          var titleValue1 = document.createTextNode("Title: " + postingsArr[i].postingTitle);
+                          titleH1.appendChild(titleValue1);
+                          jobDiv1.appendChild(titleH1);
+
+
+                          var genderH1 = document.createElement("H4");
+                          var genderHValue1 = document.createTextNode("Gender: " + postingsArr[i].postingGender);
+                          genderH1.appendChild(genderHValue1);
+                          jobDiv1.appendChild(genderH1);
+
+
+                          var AgeH1 = document.createElement("H4");
+                          //var ageValue = postingsArr[i++];
+                          var ageHValue1 = document.createTextNode("Age: " + postingsArr[i].postingAge);
+                          AgeH1.appendChild(ageHValue1);
+                          jobDiv1.appendChild(AgeH1);
+
+
+                          var descriptionH1 = document.createElement("p");
+                          var descriptionHValue1 = document.createTextNode("Description: " + postingsArr[i].postingDescription);
+                          descriptionH1.appendChild(descriptionHValue1);
+                          jobDiv1.appendChild(descriptionH1);
+
+
+                          postingsDiv.appendChild(jobDiv1);
+                      }
+                  }
+              }
+          </script>
 </body>
+
+
 </html>
