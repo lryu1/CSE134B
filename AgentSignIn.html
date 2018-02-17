@@ -1,102 +1,160 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Agent's Sign In</title>
-  <meta charset="utf-8" />
     <style>
-        
-        div.loginSection
-        {
-           display: table;
-           width: 100%;
-           border-style:solid;
-           background-color:#EBEBEB;
-           font-style:italic;
-           font-weight:bold;
-           font-size:1.45em;
-    
-        }
-        div.logIn{
-            
-            display: table-cell;
-   vertical-align: middle;
-   text-align:right;
-   font-style:normal;
-   font-weight: bold;
-   padding-right:5%;
-   font-size:initial;
-        }
-        input[type=submit] {
+        div.loginSection {
+            display: table;
+            width: 100%;
+            border-style: solid;
+            background-color: #000000;
+            font-style: italic;
             font-weight: bold;
-            
+            font-size: 1.45em;
+            color: white;
         }
 
-        img.actingImg{
-            display:block;
-            margin-right:auto;
-            margin-left:auto;
+        div.logIn {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+            font-style: normal;
+            font-weight: bold;
+            padding-right: 5%;
+            font-size: initial;
+        }
+
+        .createButton {
+            font-weight: bold;
+        }
+
+        img.actingImg {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
         }
 
         div.createAccount {
-           
-        display:block;
-            margin-right:auto;
-            margin-left:auto;
-            
-         width:35%;
-           border-style:solid;
-           background-color:#EBEBEB;
-           font-style:italic;
-           font-weight:bold;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            width: 35%;
+            border-style: solid;
+            background-color: #EBEBEB;
+            font-style: italic;
+            font-weight: bold;
         }
     </style>
-    
+    <title></title>
+    <meta charset="utf-8" />
 </head>
 <body>
-     <div class="loginSection">
-        <p> Agent Sign In Page </p>
-            <div class="logIn">
-                <form class="logIn" method="post" action="./AgentsPostings.html">
-                    <br /><br />
 
+
+
+    <div class="loginSection">
+        <p> &nbsp &nbsp Agent Sign In Page </p>
+
+
+        <div class="logIn">
+            <form class="logIn" method="post" action="AgentsPostings.html">
+                <br />
+
+                <span style="color:white;">
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email">
-                    <label for="password">  Password</label>
-                    <input type="password" id="password" name="password" />
-                    <label for="submit"> </label>
-                    <input type="submit" id="submit" value="Log In" />
-                    <br /><br /><br />
+                    <input type="text" name="email">
+                    <label for="password"> &nbsp &nbsp Password</label>
+                    <input type="password" name="password" />
+                    <label for=""> &nbsp &nbsp</label>
+                    <input type="submit" value="Log In" />
+                </span>
+                <br /><br />
 
-                </form>
-            </div>
-</div>
+            </form>
+            <!---
+              <label for=""> &nbsp &nbsp</label>
+              <span style="display: inline;">
+                  <button onclick="window.location.href='actorHomePage.html'">Log In</button>
+              </span>
+              <br /><br /><br />
+            -->
 
-    <img class="actingImg" src="./actingImg.jpg" alt="acting page"/>
+
+
+        </div>
+    </div>
+
+    <img class="actingImg" src="./actingImg.jpg" />
 
     <div class="createAccount">
         <form action="/action_page.php">
             <fieldset>
                 <legend>Create New Account</legend>
                 First name:<br>
-                <input type="text" name="firstname" /><br><br />
+                <input type="text" id="firstName" name="firstname" /><br><br />
                 Last name:<br>
-                <input type="text" name="lastname" ><br><br>
+                <input id="lastName" type="text" name="lastname"><br><br>
                 Mobile:<br />
-                <input type="text" name="mobile"><br><br>
+                <input id="mobile" type="text" name="mobile"><br><br>
                 Email:<br />
-                <input type="text" name="email"><br /><br />
+                <input id="email" type="text" name="email"><br /><br />
                 Password:<br />
                 <input type="password" name="password" />
 
-            <br /><br />
-                Gender:<br />
+                <br /><br />
                 
-                <input type="radio" name="gender" value="male" checked> Male<br>
-                <input type="radio" name="gender" value="female"> Female<br><br />
 
-                <input type="submit" value="Submit">
+                <input id="r1" type="radio" name="gender" value="male" checked> Male<br>
+                <input id="r2" type="radio" name="gender" value="female"> Female<br><br />
+
+                <!-- <input type="submit" onclick="createProfileFunction" value="Submit"> -->
             </fieldset>
         </form>
+        <!--<button class="createButton" onclick="createProfileFunction()"> Create Account</button>-->
+        <button onclick="myFunction()">Add</button>
+
     </div>
+
+
+    <script>
+        function myFunction() {
+            var agentObj = {
+                agentFirstName: "",
+                agentLastName: "",
+                agentGender: "",
+                agentMobile: "",
+                agentEmail: "",
+                agentBirthday:"",
+
+            };
+
+            agentObj.agentFirstName = document.getElementById("firstName").value;
+            agentObj.agentLastName = document.getElementById("lastName").value;
+
+             if (document.getElementById("r1").checked) {
+                 agentObj.agentGender = document.getElementById("r1").value;
+             }
+             else
+             {
+                 agentObj.agentGender = document.getElementById("r2").value;
+             }
+
+             agentObj.agentMobile = document.getElementById("mobile").value;
+
+             agentObj.agentEmail = document.getElementById("email").value;
+          //   actorObj.actorBirthday = document.getElementById("bDay").value;
+
+
+             //actorObj.actorBirthday = document.getElementById("bDay").value;
+            /**
+            if (localStorage.getItem("actorObj") !== null) {
+                localStorage.removeItem("actorObj");
+            }
+            */
+                 localStorage.setItem("agentObj", JSON.stringify(agentObj));
+
+         }
+
+    </script>
+
 </body>
 </html>
