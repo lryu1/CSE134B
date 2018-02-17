@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <style>
         ul {
-            display:flex;
-           justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
             list-style-type: none;
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color:#EBEBEB;
+            background-color: #EBEBEB;
         }
 
         li {
@@ -21,108 +21,72 @@
                 display: block;
                 color: black;
                 text-align: center;
-                font-weight:bold;
+                font-weight: bold;
                 padding: 14px 16px;
                 text-decoration: none;
             }
 
                 li a:hover:not(.active) {
-                    background-color:burlywood;
+                    background-color: burlywood;
                 }
 
         .active {
-            background-color:gray;
+            background-color: gray;
         }
 
         div.Filter {
-           
-        display:block;
-            position:absolute;
-            top:8%;
-           
+            display: block;
+            position: absolute;
+            top: 8%;
             height: 85%;
-         width:16%;
-         border-radius: 20px;
-         border-style:double;
-      
-           background-color:#EBEBEB;
-           padding:20px;
-           font-style:italic;
-           font-weight:bold;
-        
-        
-
-
+            width: 16%;
+            border-radius: 20px;
+            border-style: double;
+            background-color: #EBEBEB;
+            padding: 20px;
+            font-style: italic;
+            font-weight: bold;
         }
+
         div.postings {
             position: absolute;
             top: 8%;
             left: 25%;
             height: 75%;
-    		width: 75%;
+            width: 75%;
         }
-     div.post1{
-           
-     
-         
-           
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           font-style:italic;
-           
-        
-	
-}
-        div.post2{
-       
-        
-  
-         margin-top:20px;
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           
-           
-        
-	
-}
 
-        div.post3{
-       
-        
+        div.post1 {
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+            font-style: italic;
+        }
 
-         margin-top:20px;
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           
-           
-        
-	
-}
-         div.post4{
-       
-        
+        div.post2 {
+            margin-top: 20px;
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+        }
 
-         margin-top:20px;
-         width:85%;
-         border-radius: 20px;
-         padding:10px;
-       
-           background-color:#EBEBEB;
-           
-           
-        
-	
-}
+        div.post3 {
+            margin-top: 20px;
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+        }
 
+        div.post4 {
+            margin-top: 20px;
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
     <title>Recruiter Home Page</title>
@@ -135,70 +99,47 @@
         <li><a href=./Messages.html>Messages</a></li>
     </ul>
     <form name="form1" method="post" action="index.html">
-  <label class="logoutLblPos">
-  <input name="submit2" type="submit" id="submit2" value="log out">
-  </label>
-</form>
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
 
-    <div class="Filter">
-        <form action="/action_page.php">
-            Filter Actors:<br /><br />
-                location:
-                <input type="text" name="location" /><br><br />
-                Gender:<br/>
-                <input type="radio" name="gender" value="male" checked> Male<br>
-                <input type="radio" name="gender" value="female"> Female<br>
-                <input type="radio" name="gender" value="other"> Other<br><br />
-               
-                Age:
-                <input type="range" name="age" min="18" max="100"><br /> <br />
-
-                <input type="submit" value="Submit">
-          
-        </form>
-    </div>
+    
     <div id="actor">
     </div>
     <script>
             var actorObj = JSON.parse(localStorage.getItem("actorObj"));
             var actorPg = document.getElementById("actor");
-
             var actorDiv = document.createElement("div");
             actorDiv.className = "post";
-
              var firstName = document.createElement("H3");
                       var titleValue = document.createTextNode("First Name: " + actorObj.actorFirstName);
                       firstName.appendChild(titleValue);
                       actorDiv.appendChild(firstName);
 
-             var lastName = document.createElement("H4");
-                      var lasNameV = document.createTextNode("Title: " + actorObj.actorLastName);
+             var lastName = document.createElement("H3");
+                      var lastNameV = document.createTextNode("Title: " + actorObj.actorLastName);
                       lastName.appendChild(lastNameV);
                       actorDiv.appendChild(lastName);
-
+        
             var gender = document.createElement("H4");
                       var genderV = document.createTextNode("Title: " + actorObj.actorGender);
                       gender.appendChild(genderV);
                       actorDiv.appendChild(gender);
-
             var mobile = document.createElement("H4");
                       var mobileV = document.createTextNode("Title: " + actorObj.actorMobile);
                       mobile.appendChild(mobileV);
                       actorDiv.appendChild(mobile);
-
             var email = document.createElement("H4");
                       var emailV = document.createTextNode("Title: " + actorObj.actorEmail);
                       email.appendChild(emailV);
-                      actorDiv.appendChild(email);  
-
+                      actorDiv.appendChild(email);
             // var birthday = document.createElement("H4");
             //           var birthdayV = document.createTextNode("Title: " + actorObj.actorBirthday);
             //           mobile.appendChild(birthdayV);
-            //           actorDiv.appendChild(birthday); 
-
+            //           actorDiv.appendChild(birthday);*/
             actorPg.appendChild(actorDiv);
-
-        </script>
+    </script>
 
 </body>
 </html>
