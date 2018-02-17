@@ -34,19 +34,7 @@
             background-color: gray;
         }
 
-        div.Filter {
-            display: block;
-            position: absolute;
-            top: 8%;
-            height: 85%;
-            width: 16%;
-            border-radius: 20px;
-            border-style: double;
-            background-color: #EBEBEB;
-            padding: 20px;
-            font-style: italic;
-            font-weight: bold;
-        }
+      
 
         div.postings {
             position: absolute;
@@ -56,15 +44,8 @@
             width: 75%;
         }
 
-        div.post1 {
-            width: 85%;
-            border-radius: 20px;
-            padding: 10px;
-            background-color: #EBEBEB;
-            font-style: italic;
-        }
 
-        div.post2 {
+        div.post {
             margin-top: 20px;
             width: 85%;
             border-radius: 20px;
@@ -72,21 +53,7 @@
             background-color: #EBEBEB;
         }
 
-        div.post3 {
-            margin-top: 20px;
-            width: 85%;
-            border-radius: 20px;
-            padding: 10px;
-            background-color: #EBEBEB;
-        }
-
-        div.post4 {
-            margin-top: 20px;
-            width: 85%;
-            border-radius: 20px;
-            padding: 10px;
-            background-color: #EBEBEB;
-        }
+        
     </style>
     <link rel="stylesheet" href="styles.css">
     <title>Recruiter Home Page</title>
@@ -105,7 +72,7 @@
     </form>
 
     
-    <div id="actor">
+    <div id="actor" class="postings">
     </div>
     <script>
             var actorObj = JSON.parse(localStorage.getItem("actorObj"));
