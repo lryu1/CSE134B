@@ -157,7 +157,7 @@
           
         </form>
     </div>
-    <div id=actor>
+    <div id="actor">
     </div>
     <script>
             var actorObj = JSON.parse(localStorage.getItem("actorObj"));
@@ -167,36 +167,36 @@
             actorDiv.className = "post";
 
              var firstName = document.createElement("H3");
-                      var titleValue = document.createTextNode("First Name: " + actorObj.firstName);
+                      var titleValue = document.createTextNode("First Name: " + actorObj.actorFirstName);
                       firstName.appendChild(titleValue);
                       actorDiv.appendChild(firstName);
 
              var lastName = document.createElement("H4");
-                      var lasNameV = document.createTextNode("Title: " + actorObj.lastName);
+                      var lasNameV = document.createTextNode("Title: " + actorObj.actorLastName);
                       lastName.appendChild(lastNameV);
                       actorDiv.appendChild(lastName);
 
             var gender = document.createElement("H4");
-                      var genderV = document.createTextNode("Title: " + actorObj.gender);
+                      var genderV = document.createTextNode("Title: " + actorObj.actorGender);
                       gender.appendChild(genderV);
                       actorDiv.appendChild(gender);
 
             var mobile = document.createElement("H4");
-                      var mobileV = document.createTextNode("Title: " + actorObj.mobile);
+                      var mobileV = document.createTextNode("Title: " + actorObj.actorMobile);
                       mobile.appendChild(mobileV);
                       actorDiv.appendChild(mobile);
 
             var email = document.createElement("H4");
-                      var emailV = document.createTextNode("Title: " + actorObj.email);
+                      var emailV = document.createTextNode("Title: " + actorObj.actorEmail);
                       email.appendChild(emailV);
                       actorDiv.appendChild(email);  
 
-            var birthday = document.createElement("H4");
-                      var birthdayV = document.createTextNode("Title: " + actorObj.birthday);
-                      mobile.appendChild(birthdayV);
-                      actorDiv.appendChild(birthday); 
+            // var birthday = document.createElement("H4");
+            //           var birthdayV = document.createTextNode("Title: " + actorObj.actorBirthday);
+            //           mobile.appendChild(birthdayV);
+            //           actorDiv.appendChild(birthday); 
 
-            actorPg.appendChild(actorDiv)
+            actorPg.appendChild(actorDiv);
 
         </script>
 
