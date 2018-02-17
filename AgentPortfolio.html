@@ -1,67 +1,89 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-	<head>
-    <title>Agent's Clients</title>
-     <meta charset="utf-8" />
-     <link rel="stylesheet" href="styles.css">
-		<style>
+<head>
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div.agentInfo {
+            position: absolute;
+            top: 10%;
+            left: 25%;
+            height: 80%;
+            width: 50%;
+            border-radius: 20px;
+            border-style: double;
+            background-color: #EBEBEB;
+            padding: 20px;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+        }
+
+     
+    </style>
 
 
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-</style>
 </head>
-
 <body>
-<ul>
-        <li><a href="./AgentsPostings.html">Postings</a></li>
-        <li><a href="./AgentsClients.html">My Clients</a></li>
-        <li><a href=."#portfolio">Portfolio</a></li>
+
+
+
+    <ul>
+
+        <li><a href="#postings">Postings</a></li>
+        <li><a href="./AgentsClients.html">Browse Actors</a></li>
+        <li><a href="./AgentPortfolio.html">Portfolio</a></li>
         <li><a href=./Messages.html>Messages</a></li>
-</ul>
-<form name="form1" method="post" action="index.html">
-  <label class="logoutLblPos">
-  <input name="submit2" type="submit" id="submit2" value="log out">
-  </label>
-</form>
+    </ul>
+    <form name="form1" method="post" action="index.html">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
 
-<div class = "personInfo">
-  
-   <br />
+
+
+    <div class="agentInfo">
+        
+        <form action="/action_page.php">
+            <br />
             Agent Info:<br /><br />
-  Name:
-  <input type="text" name="name" value="Isaac Chu"/><br><br />
-  Age:
-	<input type="text" name="age" value="40" /><br><br />
-  Gender:
-  <input type="text" name="gender" value="Male" /><br><br />
-  Talent Agency:
-  <input type="text" name="Agency" value="CSE134B Talent" /><br><br />
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbspName:
+            <input type="text" id="firstName" name="lastName" /><br><br />
+            Last Name:
+            <input type="text" id="lastName" name="lastName" /><br><br />
 
-</div>
+           
 
-<script>
+            &nbsp&nbsp&nbsp&nbsp&nbspGender:
+
+            <input type="text" id="gender" name="gender" /><br><br />
+            &nbsp&nbsp&nbsp&nbspEmail:
+            <input type="text" id="email" name="Email" /><br><br />
+            Mobile:
+            <input type="text" id="mobile" name="mobile" /><br><br />
+            Links:
+
+
+
+        </form>
+    </div>
+
+    <script>
         var agentObj = JSON.parse(localStorage.getItem("agentObj"));
-        document.getElementById("firstName").setAttribute("value", actorObj.actorFirstName);
-        document.getElementById("lastName").setAttribute("value", actorObj.actorLastName);
-        document.getElementById("mobile").setAttribute("value", actorObj.actorMobile);
+        document.getElementById("firstName").setAttribute("value", agentObj.agentFirstName);
+        document.getElementById("lastName").setAttribute("value", agentObj.agentLastName);
+        document.getElementById("mobile").setAttribute("value", agentObj.agentMobile);
 
       //document.getElementById("bDay").setAttribute("value", actorObj.actorBirthDay);
-        document.getElementById("gender").setAttribute("value", actorObj.actorGender);
-        document.getElementById("email").setAttribute("value", actorObj.actorEmail);
+        document.getElementById("gender").setAttribute("value", agentObj.agentGender);
+        document.getElementById("email").setAttribute("value", agentObj.agentEmail);
 
         //document.getElementById("age").value = "2014-02-09";;
        // document.write(actorObj.actorBirthday);
 
             ///document.getElementById("firstName").value = actorObj.actorFirstName;
     </script>
-
-
-
 
 </body>
 </html>
