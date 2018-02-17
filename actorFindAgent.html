@@ -1,50 +1,56 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Agent's Clients</title>
-     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css">
     <style>
-        div.currentAgent {
-            width: 80%;
-            height:35%;
-         border-radius: 20px;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+ li {
+	float: left;
+	}
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: burlywood;
+                }
+
+        .active {
+            background-color: gray;
+        }
       
-           background-color:#EBEBEB;
-           padding:20px;
-           font-style:italic;
-           font-weight:bold;
-           text-align:center;
+
+        div.postings {
+            position: absolute;
+            top: 8%;
+            left: 25%;
+            height: 75%;
+            width: 75%;
         }
 
-        div.agent1 {
-            width: 80%;
-            height:35%;
-         border-radius: 20px;
-      padding:20px;
-           background-color:#EBEBEB;
-           margin-top:5%;
-           font-style:italic;
-           font-weight:bold;
-           text-align:center;
-        }
-        img.currentAgentImg{
-            border-style:solid;
-            border-radius:8%;
-            margin-left:auto;
-            margin-right:auto;
-            width:100px;
-            height:auto;
-        }
-        img.agent1Img{
-            border-style:solid;
-            border-radius:8%;
-            margin-left:auto;
-            margin-right:auto;
-            width:100px;
-            height:auto;
-        }
 
+        div.post {
+            margin-top: 20px;
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+        }
     </style>
 
 </head>
@@ -52,147 +58,54 @@
 
     <ul>
 
-        <li><a href="actorHomePage.html">Casting Calls</a></li>
-        <li><a href="findAgent">Find Agent</a></li>
+        <li><a href="#actorHomePage">Casting Calls</a></li>
+        <li><a href="actorFindAgent.html">Find Agent</a></li>
         <li><a href="actorPortfolio.html">Portfolio</a></li>
         <li><a href=./Messages.html>Messages</a></li>
     </ul>
-    <form name="form1" method="post" action="index.html">
+    <form align="right" name="form1" method="post" action="log_out.php">
         <label class="logoutLblPos">
             <input name="submit2" type="submit" id="submit2" value="log out">
         </label>
     </form>
-    <div class="Filter">
-        <form action="/action_page.php">
-            Filter Agents:<br /><br />
-            location:
-            <input type="text" name="location" /><br><br />
-            Agency:
-            <input type="text" name="GENCY" /><br><br />
-            Gender:<br />
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="radio" name="gender" value="other"> Other<br><br />
-
-            Age:
-            <input type="range" name="age" min="18" max="100"><br /> <br />
-
-           
-            <button onclick="filterFunction()">Filter</button>
-
-        </form>
+   
+    <div id="containerD" class="postings">
     </div>
-    <div class="postings">
-
-        <div class="currentAgent">
-            <img class="currentAgentImg" src="isaac-chu-pic.jpg" alt="isaac"/>
-
-            <br />
-            Current Agent:<br /><br />
-            Name:
-            <input type="text" name="name" value="Isaac Chu" /><br><br />
-            Age:
-            <input type="text" name="age" value="40" /><br><br />
-            Gender:
-            <input type="text" name="gender" value="Male" /><br><br />
-            Talent Agency:
-            <input type="text" name="Agency" value="CSE134B Talent" /><br><br />
-        </div>
-
-        <div class="agent1">
-            <img class="agent1Img" src="isaac-chu-pic.jpg" alt="isaac"/>
-
-            <br />
-            Agent 1:<br /><br />
-            Name:
-            <input type="text" name="name" value="Andrew Lee" /><br><br />
-            Age:
-            <input type="text" name="age" value="35" /><br><br />
-            Gender:
-            <input type="text" name="gender" value="Male" /><br><br />
-            Talent Agency:
-            <input type="text" name="Agency" value="CSE134B Talent" /><br><br />
-            
-        </div>
-
-    </div>
-
     <script>
-        function filterFunction() {
-      
-                  while (postingsDiv.firstChild) {
-                      postingsDiv.removeChild(postingsDiv.firstChild);
-                  }
+            var agentObj = JSON.parse(localStorage.getItem("agentObj"));
+            var containerDiv = document.getElementById("containerD");
+            var agentDiv = document.createElement("div");
+            agentDiv.className = "post";
+             var firstName = document.createElement("H3");
+                      var titleValue = document.createTextNode("First Name: " + agentObj.agentFirstName);
+                      firstName.appendChild(titleValue);
+                      agentDiv.appendChild(firstName);
 
+             var lastName = document.createElement("H3");
+                      var lastNameV = document.createTextNode("Title: " + agentObj.agentLastName);
+                      lastName.appendChild(lastNameV);
+                      agentDiv.appendChild(lastName);
 
-                  for (i = 0; i < postingsArr.length; i++) {
-                      var jobTitleValue = document.getElementById("jobTitle").value;
+            var gender = document.createElement("H4");
+                      var genderV = document.createTextNode("Title: " + agentObj.agentGender);
+                      gender.appendChild(genderV);
+                      agentDiv.appendChild(gender);
 
+            var mobile = document.createElement("H4");
+            var mobileV = document.createTextNode("Title: " + agentObj.agentMobile);
+                      mobile.appendChild(mobileV);
+                      agentDiv.appendChild(mobile);
 
-                      if (document.getElementById("r1").checked) {
-                          var genderValue = document.getElementById("r1").value;
-                      }
-                      else if (document.getElementById('r2').checked) {
-                          var genderValue = document.getElementById("r2").value;
-                      }
-                      else {
-                          var genderValue = document.getElementById("r3").value;
-                      }
-                   
+            var email = document.createElement("H4");
+            var emailV = document.createTextNode("Title: " + agentObj.agentEmail);
+                      email.appendChild(emailV);
+                      agentDiv.appendChild(email);
+            // var birthday = document.createElement("H4");
+            //           var birthdayV = document.createTextNode("Title: " + actorObj.actorBirthday);
+            //           mobile.appendChild(birthdayV);
+            //           actorDiv.appendChild(birthday);*/
+            containerDiv.appendChild(agentDiv);
+    </script>
 
-                      if (document.getElementById("t20").checked) {
-                          var ageValue = document.getElementById("t20").value;
-                      }
-                      else if (document.getElementById("t30").checked) {
-                          var ageValue = document.getElementById("t30").value;
-                      }
-                      else if (document.getElementById("t40").checked) {
-                          var ageValue = document.getElementById("t40").value;
-                      }
-                  
-                        if (((jobTitleValue == postingsArr[i].postingTitle) || jobTitleValue == "") &&
-                       (genderValue == postingsArr[i].postingGender) &&
-                        ((parseInt(postingsArr[i].postingAge, 10) >= parseInt(ageValue, 10)) && (parseInt(postingsArr[i].postingAge, 10) < (parseInt(ageValue, 10) + 10))))
-                        {
-                      
-
-
-
-
-                          var jobDiv1 = document.createElement("div");                  
-                          jobDiv1.className = "post";              
-
-                          var titleH1 = document.createElement("H3");
-                          var titleValue1 = document.createTextNode("Title: " + postingsArr[i].postingTitle);
-                          titleH1.appendChild(titleValue1);
-                          jobDiv1.appendChild(titleH1);
-
-
-                          var genderH1 = document.createElement("H4");
-                          var genderHValue1 = document.createTextNode("Gender: " + postingsArr[i].postingGender);
-                          genderH1.appendChild(genderHValue1);
-                          jobDiv1.appendChild(genderH1);
-
-
-                          var AgeH1 = document.createElement("H4");
-                          //var ageValue = postingsArr[i++];
-                          var ageHValue1 = document.createTextNode("Age: " + postingsArr[i].postingAge);
-                          AgeH1.appendChild(ageHValue1);
-                          jobDiv1.appendChild(AgeH1);
-
-
-                          var descriptionH1 = document.createElement("p");
-                          var descriptionHValue1 = document.createTextNode("Description: " + postingsArr[i].postingDescription);
-                          descriptionH1.appendChild(descriptionHValue1);
-                          jobDiv1.appendChild(descriptionH1);
-
-
-                          postingsDiv.appendChild(jobDiv1);
-                      }
-                  }
-              }
-          </script>
 </body>
-
-
 </html>
