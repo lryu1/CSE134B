@@ -18,9 +18,9 @@ img {
 
 <body>
 <ul>
-        <li><a href="AgentCastingCalls.html">Browse Casting Calls</a></li>
+        <li><a href="./AgentsPostings.html">Postings</a></li>
         <li><a href="./AgentsClients.html">My Clients</a></li>
-        <li><a href=./AgentPortfolio.html>Portfolio</a></li>
+        <li><a href=."#portfolio">Portfolio</a></li>
         <li><a href=./Messages.html>Messages</a></li>
 </ul>
 <form name="form1" method="post" action="index.html">
@@ -30,7 +30,6 @@ img {
 </form>
 
 <div class = "personInfo">
-  <img src="isaac-chu-pic.jpg" alt="Isaac Chu"/>
   
    <br />
             Agent Info:<br /><br />
@@ -44,6 +43,23 @@ img {
   <input type="text" name="Agency" value="CSE134B Talent" /><br><br />
 
 </div>
+
+<script>
+        var agentObj = JSON.parse(localStorage.getItem("agentObj"));
+        document.getElementById("firstName").setAttribute("value", actorObj.actorFirstName);
+        document.getElementById("lastName").setAttribute("value", actorObj.actorLastName);
+        document.getElementById("mobile").setAttribute("value", actorObj.actorMobile);
+
+      //document.getElementById("bDay").setAttribute("value", actorObj.actorBirthDay);
+        document.getElementById("gender").setAttribute("value", actorObj.actorGender);
+        document.getElementById("email").setAttribute("value", actorObj.actorEmail);
+
+        //document.getElementById("age").value = "2014-02-09";;
+       // document.write(actorObj.actorBirthday);
+
+            ///document.getElementById("firstName").value = actorObj.actorFirstName;
+    </script>
+
 
 
 

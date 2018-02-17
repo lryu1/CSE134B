@@ -1,84 +1,146 @@
 <!DOCTYPE html>
 <html>
-	<head>
-     <title>Agent's Clients</title>
-     <meta charset="utf-8" />
-     <link rel="stylesheet" href="styles.css">
-		<style>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #EBEBEB;
+        }
 
+        li {
+            float: left;
+        }
 
-.post1{
-	border-radius: 25px;
-	border-style: solid;
-	margin: 20px;
-}
+            li a {
+                display: block;
+                color: black;
+                text-align: center;
+                font-weight: bold;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
 
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    
+                li a:hover:not(.active) {
+                    background-color: burlywood;
+                }
 
-    text-decoration: none;
-    color: initial;
-}
+        .active {
+            background-color: gray;
+        }
 
-</style>
+        div.Filter {
+            display: block;
+            position: absolute;
+            top: 8%;
+            height: 85%;
+            width: 16%;
+            border-radius: 20px;
+            border-style: double;
+            background-color: #EBEBEB;
+            padding: 20px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        div.postings {
+            position: absolute;
+            top: 8%;
+            left: 25%;
+            height: 75%;
+            width: 75%;
+        }
+
+        div.post1 {
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+            font-style: italic;
+        }
+
+        div.post2 {
+            margin-top: 20px;
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+        }
+
+        div.post3 {
+            margin-top: 20px;
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+        }
+
+        div.post4 {
+            margin-top: 20px;
+            width: 85%;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: #EBEBEB;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Recruiter Home Page</title>
 </head>
-
 <body>
 
-<ul>
-        <li><a href="AgentCastingCalls.html">Browse Casting Calls</a></li>
-        <li><a href="AgentsClients.html">My Clients</a></li>
-        <li><a href="AgentPortfolio.html">Portfolio</a></li>
-        <li><a href="Messages.html">Messages</a></li>
-</ul>
+    <ul>
+      <li><a href="./AgentsPostings.html">Postings</a></li>
+        <li><a href="#actors">Browse Actors</a></li>
+        <li><a href="./AgentPortfolio.html">Portfolio</a></li>
+        <li><a href=./Messages.html>Messages</a></li>
+    </ul>
+    <form name="form1" method="post" action="index.html">
+        <label class="logoutLblPos">
+            <input name="submit2" type="submit" id="submit2" value="log out">
+        </label>
+    </form>
 
-<form name="form1" method="post" action="index.html">
-  <label class="logoutLblPos">
-  <input name="submit2" type="submit" id="submit2" value="log out">
-  </label>
-</form>
+    
+    <div id="actor">
+    </div>
+    <script>
+            var actorObj = JSON.parse(localStorage.getItem("actorObj"));
+            var actorPg = document.getElementById("actor");
+            var actorDiv = document.createElement("div");
+            actorDiv.className = "post";
+             var firstName = document.createElement("H3");
+                      var titleValue = document.createTextNode("First Name: " + actorObj.actorFirstName);
+                      firstName.appendChild(titleValue);
+                      actorDiv.appendChild(firstName);
 
-<div class="Filter">
-	
-	<form>
-  		Age:<br>
-  		<input type="text" name="age"><br>
-  		Gender:<br>
-  		 <input type="radio" name="gender" value="male" checked> Male<br>
-  		<input type="radio" name="gender" value="female"> Female<br>
-  		<input type="radio" name="gender" value="other"> Other
-  		Location:<br>
-  		<input type = "text" name="location"><br>
-  		Ethnicity:<br>
-  		<input type = "text" name="ethnicity"><br>
-  		<input type="submit" value="Apply">
-	</form>
-</div>
-<div class="postings">
-<div class = "post">
-	<h1>Fake Client 1</h1>
-  <h3>Agency: CSE134B Talent</h3>
-  <h3>Gender: Male</h3>
-  <h3>Age: 30</h3>
-  <h3>Located: La Jolla</h3>
-  <h3>Website: fakeclient1.com </h3>
-  
-</div>
-
-<div class = "post">
-	<h1>Fake Client 2</h1>
-  <h3>Agency: CSE134B Talent</h3>
-  <h3>Gender: Female</h3>
-  <h3>Age: 24</h3>
-  <h3>Located: La Jolla</h3>
-  <h3>Website: fakeclient2.com </h3>
-  
-</div>
-</div>
-
-
+             var lastName = document.createElement("H3");
+                      var lastNameV = document.createTextNode("Title: " + actorObj.actorLastName);
+                      lastName.appendChild(lastNameV);
+                      actorDiv.appendChild(lastName);
+        
+            var gender = document.createElement("H4");
+                      var genderV = document.createTextNode("Title: " + actorObj.actorGender);
+                      gender.appendChild(genderV);
+                      actorDiv.appendChild(gender);
+            var mobile = document.createElement("H4");
+                      var mobileV = document.createTextNode("Title: " + actorObj.actorMobile);
+                      mobile.appendChild(mobileV);
+                      actorDiv.appendChild(mobile);
+            var email = document.createElement("H4");
+                      var emailV = document.createTextNode("Title: " + actorObj.actorEmail);
+                      email.appendChild(emailV);
+                      actorDiv.appendChild(email);
+            // var birthday = document.createElement("H4");
+            //           var birthdayV = document.createTextNode("Title: " + actorObj.actorBirthday);
+            //           mobile.appendChild(birthdayV);
+            //           actorDiv.appendChild(birthday);*/
+            actorPg.appendChild(actorDiv);
+    </script>
 
 </body>
 </html>
